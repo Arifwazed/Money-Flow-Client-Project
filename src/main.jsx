@@ -8,6 +8,8 @@ import RootLayout from './Components/Layout/RootLayout';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import AuthProvider from './Contexts/AuthProvider';
+import AddTransaction from './Components/AddTransaction/AddTransaction';
+import PrivateRoute from './Contexts/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,12 @@ const router = createBrowserRouter([
       {
         path: 'login',
         Component: Login,
+      },
+      {
+        path: 'addTransaction',
+        element: <PrivateRoute>
+            <AddTransaction></AddTransaction>
+        </PrivateRoute>
       }
     ]
   },
