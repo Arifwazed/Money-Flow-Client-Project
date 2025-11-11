@@ -10,6 +10,7 @@ import Login from './Components/Login/Login';
 import AuthProvider from './Contexts/AuthProvider';
 import AddTransaction from './Components/AddTransaction/AddTransaction';
 import PrivateRoute from './Contexts/PrivateRoute';
+import Register from './Components/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: 'login',
         Component: Login,
+      },
+      {
+        path: 'register',
+        Component: Register,
       },
       {
         path: 'addTransaction',
