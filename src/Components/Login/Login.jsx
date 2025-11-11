@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { use } from 'react';
+import { AuthContext } from '../../Contexts/AuthContext';
 
 const Login = () => {
+
+    const {signInGoogle} = use(AuthContext);
+
     const handleGoogleSubmit = () => {
+        signInGoogle()
+        .then(result => {
+            console.log(result.user)
+        })
+        .catch(error => {
+            console.log(error.code)
+        })
     }
+    
     return (
         <div>
             <div className="hero min-h-screen bg-linear-to-br from-[#FFE6FD] to-[#E0F8F5]">
