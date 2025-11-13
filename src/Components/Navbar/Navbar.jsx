@@ -7,7 +7,7 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/addTransaction">Add Transaction</NavLink></li>
-        <li><NavLink to="/myTransactions">My Transactions</NavLink></li>
+        <li><NavLink to="/my-transactions">My Transactions</NavLink></li>
         <li><NavLink to="/reports">Reports</NavLink></li>
     </>
     const handleLogOut = () => {

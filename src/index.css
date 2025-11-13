@@ -6,5 +6,5 @@
   name: "light";
   default: true;
   --color-primary: blue;
-  --color-secondary: teal;
+  --color-secondary: red;
 }
