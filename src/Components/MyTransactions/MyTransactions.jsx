@@ -136,7 +136,6 @@ const MyTransactions = () => {
             <div className='bg-linear-to-br from-[#FFE6FD] to-[#E0F8F5] min-h-screen'>
             <div className='w-11/12 mx-auto py-10 md:py-15 text-center'>
             <h1 className='text-4xl font-bold text-center mb-8'>My Transactions: <span className='text-primary-gradient'>{MyTransactions.length}</span></h1>
-            {/* <hr className='border-gray-400'/> */}
             <div className="overflow-x-auto border border-gray-300 rounded-lg">
                     <table className="table">
                         {/* head */}
@@ -160,30 +159,12 @@ const MyTransactions = () => {
                                     <td>
                                      {transaction.type}
                                     <br />
-                                    {/* <span className="badge badge-ghost badge-sm">{location}</span> */}
-                                    {/* <span className="badge badge-ghost badge-sm">{}</span> */}
                                     </td>
                                     <td>
-                                        {/* <div className="flex items-center gap-3">
-                                            <div className="avatar">
-                                                <div className="mask mask-squircle h-12 w-12">
-                                                    <img
-                                                    src={ user?.photoURL ? user.photoURL : "https://img.daisyui.com/images/profile/demo/2@94.webp"}
-                                                    alt="Avatar Tailwind CSS Component" />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="font-bold">{transaction.buyer_name}</div>
-                                                <div className="text-sm opacity-50">{transaction.buyer_email}</div>
-                                            </div>
-                                        </div> */}
                                         {transaction.category}
                                     </td>
                                     <td>$ {transaction.amount}</td>
                                     <td>{transaction.date}</td>
-                                    {/* <th>
-                                        {transaction.status === 'pending' ? <div className="badge badge-warning font-semibold">{transaction.status}</div> : <div className="badge badge-success font-semibold">{transaction.status}</div>}
-                                    </th> */}
                                     <th>
                                         <button 
                                         onClick={()=>handleBidModalOpen(transaction._id)} 
@@ -202,9 +183,7 @@ const MyTransactions = () => {
                                 </tr>
                             )
                         }
-                        
                         </tbody>
-                        {/* foot */}
                         
                     </table>
             </div>
