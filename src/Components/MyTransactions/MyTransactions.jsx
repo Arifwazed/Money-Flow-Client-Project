@@ -1,7 +1,7 @@
 import React, { use, useEffect, useRef, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthContext';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 const MyTransactions = () => {
     const {user} = use(AuthContext);
@@ -176,9 +176,9 @@ const MyTransactions = () => {
                                         className="btn btn-outline btn-secondary btn-sm">Remove Transaction</button>
                                     </th>
                                     <th>
-                                        <button 
-                                        // onClick={() => {handleRemoveBit(bid._id)}} 
-                                        className="btn btn-outline btn-info btn-sm">View Details</button>
+                                        <Link to={`/transaction/${transaction._id}`}
+                                        
+                                        className="btn btn-outline btn-info btn-sm">View Details</Link>
                                     </th>
                                 </tr>
                             )
