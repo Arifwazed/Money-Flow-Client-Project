@@ -1,20 +1,136 @@
-import React, { use, useEffect, useState } from 'react';
+import React, { use, useEffect, useRef, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthContext';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router';
 
 const MyTransactions = () => {
     const {user} = use(AuthContext);
     const [MyTransactions,setMyTransactions] = useState([])
+    const [selectedData,setSelectedData] = useState([]);
+    const bidModalRef = useRef(null);
+    const navigate = useNavigate()
+    const [typeOption, setTypeOption] = useState("");
+    const [categoryOption,setCategoryOption] = useState([]);
+    const categories = {
+        Income: ["Salary","Freelancing / Side Hustle","Business Profit","Investments","Rental Income" ,"Interest Income", "Refunds / Cashbacks", "Scholarship / Stipend", "Gifts & Rewards"],
+        Expense: [
+        "Food & Groceries",
+        "Rent / Housing",
+        "Utilities",
+        "Transportation",
+        "Education",
+        "Health & Fitness",
+        "Shopping & Clothing",
+        "Entertainment",
+        "Travel & Vacation",
+        "Insurance & Savings",
+        "Personal Care",
+        "Pets & Hobbies",
+        ]
+    };
+    const handleTypeChange = (e) => {
+        const selectedType = e.target.value;
+        setTypeOption(selectedType);
+        setCategoryOption(categories[selectedType] || []);
+    }
 
     useEffect(()=>{
         if(user?.email){
             fetch(`http://localhost:3000/transactions?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log("my bid: ",data)
+                console.log("my transaction: ",data)
                 setMyTransactions(data)
             })
         }
     },[user])
+
+    const handleBidModalOpen = (id) => {
+        fetch(`http://localhost:3000/transactions/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setCategoryOption(categories[data.type])
+                setSelectedData(data);
+                console.log("my selected transaction: ",data)          
+            })
+        bidModalRef.current.showModal();
+    }
+
+    const handleUpdateTransaction = (e,id) =>  {
+        e.preventDefault();
+        const type = e.target.type.value;
+        const category = e.target.category.value;
+        const amount = e.target.amount.value;
+        const description = e.target.description.value;
+        const date = e.target.date.value;
+        const newTransaction = {
+            type: type,
+            category: category,
+            amount: amount,
+            description: description,
+            date: date,
+            // name: user.displayName,
+            // email: user.email,
+        }
+        console.log("update data: ",newTransaction)
+        fetch(`http://localhost:3000/transactions/${id}`,{
+            method: "PATCH",
+            headers:  {'content-type' : 'application/json'},
+            body: JSON.stringify(newTransaction)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount){
+                Swal.fire({
+                    icon: "success",
+                    title: "Your Transaction has been updated.",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                bidModalRef.current.close();
+
+                setTimeout(()=>{
+                    navigate('/')
+                },1500);
+            }
+            
+        })
+
+    }
+
+    const handleRemoveTransaction = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if(result.isConfirmed){
+                fetch(`http://localhost:3000/transactions/${id}`,{
+                    method: "DELETE"
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log("after delete transaction:",data);
+                    if(data.deletedCount){
+                        Swal.fire({
+                        title: "Deleted!",
+                        text: "Your Transaction has been deleted.",
+                        icon: "success"
+                        });
+                        // remaining transaction find out
+                        const remainingTransaction = MyTransactions.filter(bid => bid._id !== id);
+                        setMyTransactions(remainingTransaction);       
+                    }
+                })
+            }
+        })
+    }
+
     return (
         <div>
             <div className='bg-linear-to-br from-[#FFE6FD] to-[#E0F8F5] min-h-screen'>
@@ -30,7 +146,7 @@ const MyTransactions = () => {
                             <th>Type</th>
                             <th>Category</th>
                             <th>Amount</th>
-                            <th>Date</th>
+                            <th >Date</th>
                             {/* <th>Status</th> */}
                             <th>Action</th>
                         </tr>
@@ -70,12 +186,12 @@ const MyTransactions = () => {
                                     </th> */}
                                     <th>
                                         <button 
-                                        // onClick={() => {handleRemoveBit(bid._id)}} 
+                                        onClick={()=>handleBidModalOpen(transaction._id)} 
                                         className="btn btn-outline btn-accent btn-sm">Update Transaction</button>
                                     </th>
                                     <th>
                                         <button 
-                                        // onClick={() => {handleRemoveBit(bid._id)}} 
+                                        onClick={() => {handleRemoveTransaction(transaction._id)}} 
                                         className="btn btn-outline btn-secondary btn-sm">Remove Transaction</button>
                                     </th>
                                     <th>
@@ -93,7 +209,64 @@ const MyTransactions = () => {
                     </table>
             </div>
             </div>
-        </div>
+            </div>
+            <dialog ref={bidModalRef} className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Modify Transaction Record</h3>
+                    <p className="py-3 text-gray-600">Ensure all details are accurate before saving your changes.</p>
+                    <form onSubmit={(e)=>handleUpdateTransaction(e,selectedData._id)}>
+                        <fieldset className="fieldset">
+                            {/* Type */}
+                                <label className="label">Type</label> 
+                                <select name="type" defaultValue={selectedData.type} className="select w-full" onChange={handleTypeChange}> 
+                                    <option value="" disabled>Select a type</option> 
+                                    <option value="Income">Income</option> 
+                                    <option value="Expense">Expense</option> 
+                                </select>
+                                {/* Category */}
+                                <label className="label">Category</label>
+                                <select name="category" defaultValue={selectedData.category} className="select w-full" required>
+                                    <option value="" disabled>Select Category</option>
+                                    {
+                                        categoryOption.map((option,index)=>(
+                                            <option key={index}>{option}</option>
+                                        ))
+                                    }
+                                </select>
+                                {/* Amount  */}
+                                <label className="label">Amount</label>
+                                <input 
+                                    type="text"
+                                    defaultValue={selectedData.amount}
+                                    className="input w-full" 
+                                    placeholder="Enter amount" 
+                                    name="amount" 
+                                    required
+                                />
+                                {/* Description  */}
+                                <label className="label">Description</label>
+                                <textarea name="description" defaultValue={selectedData.description} className="textarea w-full" placeholder="Enter Description"></textarea>
+                                {/* Date */}
+                                <label className="label">Date</label>
+                                <input
+                                    type="date"
+                                    defaultValue={selectedData.date}
+                                    name="date"
+                                    className="input w-full"
+                                    required
+                                />
+                            <button className="btn btn-info mt-4">Update Transaction</button>
+                        </fieldset>
+                    </form>
+
+                    <div className="modal-action">
+                        <form method="dialog">
+                            {/* if there is a button in form, it will close the modal */}
+                            <button className="btn">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
         </div>
     );
 };
