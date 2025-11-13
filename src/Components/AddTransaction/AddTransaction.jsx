@@ -50,7 +50,7 @@ const AddTransaction = () => {
             name: user.displayName,
             email: user.email,
         }
-        fetch('http://localhost:3000/transactions',{
+        fetch('https://money-flow-server-api.vercel.app/transactions',{
             method: "POST",
             headers:  {'content-type' : 'application/json'},
             body: JSON.stringify(newTransaction)

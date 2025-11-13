@@ -11,13 +11,13 @@ const TransactionDetails = () => {
 
   useEffect(() => {
     // Fetch single transaction
-    fetch(`http://localhost:3000/transactions/${id}`)
+    fetch(`https://money-flow-server-api.vercel.app/transactions/${id}`)
       .then((res) => res.json())
       .then((data) => setTransaction(data));
 
     // Fetch all transactions for category summary
     if (user?.email) {
-      fetch(`http://localhost:3000/transactions?email=${user.email}`)
+      fetch(`https://money-flow-server-api.vercel.app/transactions?email=${user.email}`)
         .then((res) => res.json())
         .then((allData) => {
           const categoryTransactions = allData.filter(

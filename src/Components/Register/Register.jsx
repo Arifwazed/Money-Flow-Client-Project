@@ -60,7 +60,7 @@ const Register = () => {
                 email: result.user.email,
                 photo: result.user.photoURL
             }
-            fetch('http://localhost:3000/users',{
+            fetch('https://money-flow-server-api.vercel.app/users',{
                 method: "POST",
                 headers:  {'content-type' : 'application/json'},
                 body: JSON.stringify(newUser)

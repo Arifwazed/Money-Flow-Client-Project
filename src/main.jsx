@@ -52,7 +52,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/transaction/:id',
-        loader: ({params}) => fetch(`http://localhost:3000/transactions/${params.id}`),
+        loader: ({params}) => fetch(`https://money-flow-server-api.vercel.app/transactions/${params.id}`),
         element: <PrivateRoute>
           <TransactionDetails></TransactionDetails> 
         </PrivateRoute>

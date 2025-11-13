@@ -18,7 +18,7 @@ const Reports = () => {
 
   // Fetch all transactions
   useEffect(() => {
-    fetch(`http://localhost:3000/transactions`)
+    fetch(`https://money-flow-server-api.vercel.app/transactions`)
       .then((res) => res.json())
       .then((data) => setTransactions(data));
   }, []);

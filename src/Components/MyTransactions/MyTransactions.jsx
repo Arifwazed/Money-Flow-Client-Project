@@ -36,7 +36,7 @@ const MyTransactions = () => {
 
     useEffect(()=>{
         if(user?.email){
-            fetch(`http://localhost:3000/transactions?email=${user?.email}`)
+            fetch(`https://money-flow-server-api.vercel.app/transactions?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log("my transaction: ",data)
@@ -46,7 +46,7 @@ const MyTransactions = () => {
     },[user])
 
     const handleBidModalOpen = (id) => {
-        fetch(`http://localhost:3000/transactions/${id}`)
+        fetch(`https://money-flow-server-api.vercel.app/transactions/${id}`)
             .then(res => res.json())
             .then(data => {
                 setCategoryOption(categories[data.type])
@@ -73,7 +73,7 @@ const MyTransactions = () => {
             // email: user.email,
         }
         console.log("update data: ",newTransaction)
-        fetch(`http://localhost:3000/transactions/${id}`,{
+        fetch(`https://money-flow-server-api.vercel.app/transactions/${id}`,{
             method: "PATCH",
             headers:  {'content-type' : 'application/json'},
             body: JSON.stringify(newTransaction)
@@ -110,7 +110,7 @@ const MyTransactions = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if(result.isConfirmed){
-                fetch(`http://localhost:3000/transactions/${id}`,{
+                fetch(`https://money-flow-server-api.vercel.app/transactions/${id}`,{
                     method: "DELETE"
                 })
                 .then(res => res.json())
