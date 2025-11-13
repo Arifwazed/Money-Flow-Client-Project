@@ -10,7 +10,7 @@ const Navbar = () => {
         <li><NavLink to="/addTransaction" className={({isActive})=> isActive ? "text-primary-gradient font-bold" : ""}>Add Transaction</NavLink></li>
         <li><NavLink to="/my-transactions" className={({isActive})=> isActive ? "text-primary-gradient font-bold" : ""}>My Transactions</NavLink></li>
         <li><NavLink to="/reports" className={({isActive})=> isActive ? "text-primary-gradient font-bold" : ""}>Reports</NavLink></li>
-        <li><NavLink to="/" className={({isActive})=> isActive ? "text-primary-gradient font-bold" : ""}>My Profile</NavLink></li>
+        <li><NavLink to="/updateProfile" className={({isActive})=> isActive ? "text-primary-gradient font-bold" : ""}>My Profile</NavLink></li>
     </>
     const handleLogOut = () => {
         logOut()

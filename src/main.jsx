@@ -14,6 +14,7 @@ import Register from './Components/Register/Register';
 import MyTransactions from './Components/MyTransactions/MyTransactions';
 import TransactionDetails from './Components/TransactionDetails/TransactionDetails';
 import Reports from './Components/Reports/Reports';
+import UpdateProfile from './Components/UpdateProfile/UpdateProfile';
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,12 @@ const router = createBrowserRouter([
         loader: ({params}) => fetch(`https://money-flow-server-api.vercel.app/transactions/${params.id}`),
         element: <PrivateRoute>
           <TransactionDetails></TransactionDetails> 
+        </PrivateRoute>
+      },
+      {
+        path: 'updateProfile',
+        element: <PrivateRoute>
+          <UpdateProfile></UpdateProfile> 
         </PrivateRoute>
       }
     ]
