@@ -13,6 +13,7 @@ import PrivateRoute from './Contexts/PrivateRoute';
 import Register from './Components/Register/Register';
 import MyTransactions from './Components/MyTransactions/MyTransactions';
 import TransactionDetails from './Components/TransactionDetails/TransactionDetails';
+import Reports from './Components/Reports/Reports';
 
 const router = createBrowserRouter([
   {
@@ -43,12 +44,19 @@ const router = createBrowserRouter([
             <MyTransactions></MyTransactions>
         </PrivateRoute>
       },
-      // {
-      //   path: `/transaction/${id}`,
-      //   element: <PrivateRoute>
-      //     <TransactionDetails></TransactionDetails> 
-      //   </PrivateRoute>
-      // }
+      {
+        path: '/reports',
+        element: <PrivateRoute>
+            <Reports></Reports>
+        </PrivateRoute>
+      },
+      {
+        path: '/transaction/:id',
+        loader: ({params}) => fetch(`http://localhost:3000/transactions/${params.id}`),
+        element: <PrivateRoute>
+          <TransactionDetails></TransactionDetails> 
+        </PrivateRoute>
+      }
     ]
   },
 ]);
