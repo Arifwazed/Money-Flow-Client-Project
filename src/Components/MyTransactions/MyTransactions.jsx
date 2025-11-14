@@ -11,6 +11,7 @@ const MyTransactions = () => {
     const navigate = useNavigate();
     const [typeOption, setTypeOption] = useState("");
     const [categoryOption, setCategoryOption] = useState([]);
+    const [sort,setSort] = useState('Sort By Date')
 
     const categories = {
         Income: [
@@ -74,7 +75,7 @@ const MyTransactions = () => {
         e.preventDefault();
         const type = e.target.type.value;
         const category = e.target.category.value;
-        const amount = e.target.amount.value;
+        const amount = parseInt(e.target.amount.value);
         const description = e.target.description.value;
         const date = e.target.date.value;
 
@@ -140,6 +141,30 @@ const MyTransactions = () => {
         });
     };
 
+    useEffect(()=>{
+        
+        let sorted = [...MyTransactions];
+
+        if(sort === 'Sort By Date'){
+            sorted.sort((a,b) => b.date.localeCompare(a.date));
+        }
+        else{
+            sorted.sort((a,b) => Number(b.amount) - Number(a.amount));
+            // setMyTransactions(newSort)
+        }
+        setMyTransactions(sorted)
+    },[sort]);
+
+    const handleSort = (type) =>{
+        if(type === 'date'){
+            setSort('Sort By Date')
+        }
+        else{
+            setSort('Sort By Amount')
+        }
+    }
+
+
     return (
         <div>
             <div className='bg-linear-to-br from-[#FFE6FD] to-[#E0F8F5] min-h-screen'>
@@ -147,7 +172,17 @@ const MyTransactions = () => {
                     <h1 className='text-4xl font-bold text-center mb-8'>
                         My Transactions: <span className='text-primary-gradient'>{MyTransactions.length}</span>
                     </h1>
-                    
+
+                    <div className='flex justify-end'>
+                        <div className="dropdown dropdown-bottom dropdown-end mb-5">
+                            <div tabIndex={0} role="button" className="btn m-1">{sort} ⬇️</div>
+                            <ul tabIndex="-1" className="dropdown-content menu bg-base-200 rounded-box z-1 w-52 p-2 shadow-sm">
+                                <li onClick={()=>handleSort('date')}><a>Sort By Date</a></li>
+                                <li onClick={()=>handleSort('amount')}><a>Sort By Amount</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <div className="overflow-x-auto border border-gray-300 rounded-lg">
                         <table className="table">
                             <thead>
@@ -157,7 +192,7 @@ const MyTransactions = () => {
                                     <th>Category</th>
                                     <th>Amount</th>
                                     <th>Date</th>
-                                    <th>Action</th>
+                                    <th className='text-center' colSpan={3}>Action</th>
                                 </tr>
                             </thead>
                             <tbody>

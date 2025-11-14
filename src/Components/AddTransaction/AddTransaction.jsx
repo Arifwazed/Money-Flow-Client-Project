@@ -35,7 +35,7 @@ const AddTransaction = () => {
         e.preventDefault();
         const type = e.target.type.value;
         const category = e.target.category.value;
-        const amount = e.target.amount.value;
+        const amount = parseInt(e.target.amount.value);
         const description = e.target.description.value;
         const date = e.target.date.value;
         const email = user.email;
