@@ -1,14 +1,19 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
-import { Outlet } from 'react-router';
+import { Outlet,useNavigation } from 'react-router';
 import Footer from '../Footer/Footer';
 import { Bounce, ToastContainer } from 'react-toastify';
+import LoadingSpin from '../Loading/LoadingSpin';
 
 const RootLayout = () => {
+    const navigate = useNavigation();
+    const loading = navigate.state === 'loading';
     return (
         <div>
             <Navbar></Navbar>
-            <Outlet></Outlet>
+            {
+                loading ? <LoadingSpin></LoadingSpin> : <Outlet></Outlet>
+            }
             <Footer></Footer>
             <ToastContainer
                 position="top-center"

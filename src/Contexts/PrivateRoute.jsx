@@ -1,10 +1,15 @@
 import React, { use } from 'react';
 import { AuthContext } from './AuthContext';
 import { Navigate, useLocation } from 'react-router';
+import LoadingSpin from '../Components/Loading/LoadingSpin';
 
 const PrivateRoute = ({children}) => {
-    const {user} = use(AuthContext);
-    const location = useLocation()
+    const {user,loading} = use(AuthContext);
+    const location = useLocation();
+
+    if(loading){
+        return <LoadingSpin></LoadingSpin>;
+    }
     if(user){
         return children
     }

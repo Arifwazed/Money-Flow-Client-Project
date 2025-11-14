@@ -1,7 +1,8 @@
-import React, { use, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import bg from '../../assets/4452.jpg'
 import { AuthContext } from '../../Contexts/AuthContext';
 import Swal from 'sweetalert2';
+import LoadingSpin from '../Loading/LoadingSpin';
 
 const AddTransaction = () => {
     const {user} = use(AuthContext)
@@ -25,6 +26,22 @@ const AddTransaction = () => {
         "Pets & Hobbies",
         ]
     };
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const img = new Image();
+        img.src = bg;
+
+        img.onload = () => {
+            setLoading(false);
+        };
+    }, []);
+
+    if (loading) {
+        return (
+            <LoadingSpin></LoadingSpin>
+        );
+    }
     const handleTypeChange = (e) => {
         const selectedType = e.target.value;
         setTypeOption(selectedType);
