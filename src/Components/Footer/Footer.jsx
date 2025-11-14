@@ -5,7 +5,7 @@ const Footer = () => {
         <div>
             <footer className="footer sm:footer-horizontal p-10 bg-[#2D5DA9] text-white">
                 <aside>
-                    <a className="font-bold text-xl">Money<span className='text-primary-gradient font-bold'>Flow</span></a>
+                    <a className="font-bold text-xl flex items-center"><img width="40" height="40" src="https://img.icons8.com/fluency/48/notes-and-coins.png" alt="notes-and-coins"/>Money<span className='text-primary-gradient font-bold'>Flow</span></a>
                     <p className='max-w-100'>
                     Easily track spending, set goals, and visualize your progress through beautiful charts. 
                     

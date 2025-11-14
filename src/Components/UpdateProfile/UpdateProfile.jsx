@@ -101,7 +101,7 @@ const UpdateProfile = () => {
 
                   <button
                     type="submit"
-                    className="btn btn-update w-full mt-4 text-white font-semibold text-base shadow-none"
+                    className="btn bg-[#5EBB2B] w-full mt-4 text-white font-semibold text-base shadow-none"
                   >
                     Update Profile
                   </button>

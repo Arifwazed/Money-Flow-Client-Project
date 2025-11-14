@@ -12,3 +12,52 @@
   @apply bg-linear-to-br from-[#3363FF] to-[#A92FFF] bg-clip-text text-transparent;
   -webkit-background-clip: text;
 }
+
+
+.btn-logout {
+  background-image: linear-gradient(to right, #FF512F 0%, #DD2476  51%, #FF512F  100%);
+  transition: 0.5s;
+  background-size: 200% auto;
+  
+}
+.btn-logout:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-login {
+  background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF   100%);
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+}
+
+.btn-login:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+}
+
+.btn-google {
+  background-image: linear-gradient(to right, #EC6EAD 0%, #3494E6  55%, #EC6EAD  100%);
+  transition: 0.5s;
+  background-size: 200% auto;
+            
+}
+.btn-google:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.btn-register {
+  background-image: linear-gradient(to right, #A770EF 0%, #CF8BF3  55%, #A770EF  100%);
+  transition: 0.5s;
+  background-size: 200% auto;
+            
+}
+.btn-register:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+         
+  
+
+               

@@ -161,7 +161,7 @@ const AddTransaction = () => {
                                     value={user.displayName}
                                     readOnly
                                 />
-                                <button className="btn btn-primary-custom mt-4 flex items-center justify-center gap-2"><img width="25" height="25" src="https://img.icons8.com/sf-black/64/plus-math.png" alt="plus-math"/>Add Transaction</button>
+                                <button className="btn bg-[#5EBB2B] border-none shadow-none mt-4 flex items-center justify-center gap-2"><img width="25" height="25" src="https://img.icons8.com/sf-black/64/plus-math.png" alt="plus-math"/>Add Transaction</button>
                             </fieldset>
                         </form>
                     </div>

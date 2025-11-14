@@ -29,7 +29,9 @@ const Navbar = () => {
                         {links}
                     </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">MoneyFlow</a>
+                    <a className="flex items-center text-xl font-bold">
+                        <img width="40" height="40" src="https://img.icons8.com/fluency/48/notes-and-coins.png" alt="notes-and-coins"/>
+                        Money <span className='text-primary-gradient'>Flow</span> </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -43,9 +45,9 @@ const Navbar = () => {
                             <div tabIndex={0} role="button" className=" m-1">
                                 <img width="40" height="40" className="rounded-full" src={user?.photoURL || fallbackImg} alt=""/>
                                 </div>
-                            <ul tabIndex="-1" className="dropdown-content menu bg-[#2E481E] text-white rounded-box z-1 w-48 md:w-54 p-2 shadow-sm border">
+                            <ul tabIndex="-1" className="dropdown-content menu bg-[#2D5DA9] text-white rounded-box z-1 w-48 md:w-54 p-2 shadow-sm border">
                                 <li className="text-base font-semibold"><a><img width="28" height="28" src="https://img.icons8.com/pulsar-gradient/48/user.png" alt="user"/>{user.displayName}</a></li>
-                                <li><button onClick={handleLogOut} className="btn btn-logout border-none shadow-none bg-[#5EBB2B] text-white">LogOut <img width="18" height="18" src="https://img.icons8.com/metro/26/FFFFFF/exit.png" alt="exit"/></button></li>
+                                <li><button onClick={handleLogOut} className="btn btn-logout border-none shadow-none btn-logout">LogOut <img width="18" height="18" src="https://img.icons8.com/metro/26/FFFFFF/exit.png" alt="exit"/></button></li>
                             </ul>
                         </div>
                         </>
@@ -53,8 +55,8 @@ const Navbar = () => {
                         //     <img src={user?.photoURL || fallbackImg} className='h-9 w-9 rounded-full' alt="" onError={(e)=> {e.target.style.display = 'none'}}/> <button onClick={handleLogOut} className='btn'>Sign Out</button>
                         // </div>
                         : <>
-                        <Link to="/login" className='btn'>Login</Link>
-                        <Link to="/register" className='btn ml-3'>Sign Up</Link>
+                        <Link to="/login" className='btn btn-login border-none shadow-none'>Login</Link>
+                        <Link to="/register" className='btn btn-register border-none shadow-none text-white ml-3'>Sign Up</Link>
                         </> 
                         
                         
