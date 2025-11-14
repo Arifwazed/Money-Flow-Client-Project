@@ -13,6 +13,9 @@
   -webkit-background-clip: text;
 }
 
+.custom-select option{
+  background-color: white;
+} 
 
 .btn-logout {
   background-image: linear-gradient(to right, #FF512F 0%, #DD2476  51%, #FF512F  100%);
@@ -58,6 +61,13 @@
   background-position: right center; /* change the direction of the change here */
 }
          
-  
-
-               
+.btn-g {
+  background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC  55%, #02AAB0   100%);
+  transition: 0.5s;
+  background-size: 200% auto;
+            
+}
+.btn-g:hover {
+  background-position: right center; /* change the direction of the change here */
+} 
+                         

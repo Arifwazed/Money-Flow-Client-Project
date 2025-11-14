@@ -30,7 +30,7 @@ const UpdateProfile = () => {
       <div className="bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc]">
         {/* <Navbar></Navbar> */}
         <div className="flex justify-center items-center md:h-[70vh] p-7">
-          <div className="card bg-[#a7d7fc] w-full max-w-3xl shrink-0 shadow-2xl">
+          <div className="card bg-[#b6dffe] w-full max-w-3xl shrink-0 shadow-2xl ">
             <h1 className="text-2xl font-semibold text-center text-primary-gradient py-5">
               Update Profile
             </h1>
@@ -45,18 +45,18 @@ const UpdateProfile = () => {
                 className="md:w-60 h-40 md:h-60 rounded-full object-cover border-2 border-gray-300"
                 />
                 <div>
-                <div className='flex gap-4'>
-                  <img width="37" height="10" src="https://img.icons8.com/sf-regular-filled/48/name.png"  alt="name"/>
-                  <h1 className="text-2xl font-semibold">{user.displayName}</h1>
+                <div className='flex gap-4 mb-2'>
+                  <img width="37" height="10" src="https://img.icons8.com/3d-fluency/94/user-male-circle.png" alt="user-male-circle"/>
+                  <h1 className="text-2xl font-semibold text-gray-600">{user.displayName}</h1>
                 </div>
                 <div className='flex gap-5 '>
-                  <img width="30" height="10" src="https://img.icons8.com/ios-filled/50/new-post.png"  alt="new-post"/>
-                  <p className="text-xl font-semibold">{user.email}</p>
+                  <img width="37" height="10" src="https://img.icons8.com/3d-fluency/94/mail.png" alt="mail"/>
+                  <p className="text-xl font-semibold text-gray-700">{user.email}</p>
                 </div>
                 </div>
             </div>
             <div className=''>
-                <p className="text-gray-600 text-lg">
+                <p className="text-[#2D5DA9] font-semibold text-lg">
                 Update your photo and name
                 </p>
 
@@ -68,7 +68,7 @@ const UpdateProfile = () => {
                     </label>
                     <input
                       type="text"
-                      className="input w-full bg-[#FBF8E5] text-gray-800"
+                      className="input w-full bg-white/50 border-white/20 text-gray-800 rounded-xl"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Enter your name"
@@ -80,7 +80,7 @@ const UpdateProfile = () => {
                     <label className="label text-sm font-semibold mb-2">Email</label>
                     <input
                       type="email"
-                      className="input w-full bg-[#FBF8E5] "
+                      className="input w-full bg-white/50 border-white/20 text-gray-800 rounded-xl"
                       value={email}
                       disabled
                     />
@@ -92,7 +92,7 @@ const UpdateProfile = () => {
                     </label>
                     <input
                       type="text"
-                      className="input w-full bg-[#FBF8E5] text-gray-800"
+                      className="input w-full bg-white/50 border-white/20 text-gray-800 rounded-xl"
                       value={photo}
                       onChange={(e) => setPhoto(e.target.value)}
                       placeholder="Enter image URL"
@@ -101,7 +101,7 @@ const UpdateProfile = () => {
 
                   <button
                     type="submit"
-                    className="btn bg-[#5EBB2B] w-full mt-4 text-white font-semibold text-base shadow-none"
+                    className="btn btn-login w-full mt-4 text-white font-semibold text-base shadow-none border-none rounded-xl "
                   >
                     Update Profile
                   </button>

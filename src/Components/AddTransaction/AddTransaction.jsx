@@ -107,14 +107,14 @@ const AddTransaction = () => {
                             <fieldset className="fieldset">
                                 {/* Type */}
                                 <label className="label">Type</label> 
-                                <select name="type" defaultValue="" className="select w-full bg-white/50 backdrop-blur-sm border-none" onChange={handleTypeChange}> 
+                                <select name="type" defaultValue="" className="select w-full bg-white/50 backdrop-blur-sm border-none rounded-xl custom-select" onChange={handleTypeChange}> 
                                     <option value="" disabled>Select a type</option> 
-                                    <option value="Income">Income</option> 
+                                    <option value="Income" >Income</option> 
                                     <option value="Expense">Expense</option> 
                                 </select>
                                 {/* Category */}
                                 <label className="label">Category</label>
-                                <select name="category" defaultValue="" className="select w-full bg-white/50 backdrop-blur-sm border-none"  disabled={!typeOption} required>
+                                <select name="category" defaultValue="" className="select w-full bg-white/50 backdrop-blur-sm border-none rounded-xl custom-select"  disabled={!typeOption} required>
                                     <option value="" disabled>{typeOption ? "Select Category" : "Select type first"}</option>
                                     {
                                         categoryOption.map((option,index)=>(
@@ -126,27 +126,27 @@ const AddTransaction = () => {
                                 <label className="label">Amount</label>
                                 <input 
                                     type="text" 
-                                    className="input w-full bg-white/50 backdrop-blur-sm border-none" 
+                                    className="input w-full bg-white/50 backdrop-blur-sm border-none rounded-xl" 
                                     placeholder="Enter amount" 
                                     name="amount" 
                                     required
                                 />
                                 {/* Description  */}
                                 <label className="label">Description</label>
-                                <textarea name="description" className="textarea w-full bg-white/50 backdrop-blur-sm border-none" placeholder="Enter Description"></textarea>
+                                <textarea name="description" className="textarea w-full bg-white/50 backdrop-blur-sm border-none rounded-xl" placeholder="Enter Description"></textarea>
                                 {/* Date */}
                                 <label className="label">Date</label>
                                 <input
                                     type="date"
                                     name="date"
-                                    className="input w-full bg-white/50 backdrop-blur-sm border-none"
+                                    className="input w-full bg-white/50 backdrop-blur-sm border-none rounded-xl"
                                     required
                                 />
                                 {/* Email */}
                                 <label className="label">User Email</label>
                                 <input 
                                     type="email" 
-                                    className="input w-full bg-white/50 backdrop-blur-sm border-none" 
+                                    className="input w-full bg-white/50 backdrop-blur-sm border-none rounded-xl" 
                                     placeholder="Email" 
                                     name="email" 
                                     value={user.email}
@@ -156,12 +156,12 @@ const AddTransaction = () => {
                                 <label className="label">User Name</label>
                                 <input
                                     type="text"
-                                    className="input w-full bg-white/50 backdrop-blur-sm border-none"
+                                    className="input w-full bg-white/50 backdrop-blur-sm border-none rounded-xl"
                                     name="name"
                                     value={user.displayName}
                                     readOnly
                                 />
-                                <button className="btn bg-[#5EBB2B] border-none shadow-none mt-4 flex items-center justify-center gap-2"><img width="25" height="25" src="https://img.icons8.com/sf-black/64/plus-math.png" alt="plus-math"/>Add Transaction</button>
+                                <button className="btn btn-login border-none shadow-none mt-4 flex items-center justify-center gap-2"><img width="25" height="25" src="https://img.icons8.com/pulsar-line/48/FFFFFF/plus.png" alt="plus"/>Add Transaction</button>
                             </fieldset>
                         </form>
                     </div>
