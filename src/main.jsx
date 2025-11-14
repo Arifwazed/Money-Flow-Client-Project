@@ -15,11 +15,13 @@ import MyTransactions from './Components/MyTransactions/MyTransactions';
 import TransactionDetails from './Components/TransactionDetails/TransactionDetails';
 import Reports from './Components/Reports/Reports';
 import UpdateProfile from './Components/UpdateProfile/UpdateProfile';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         index: true,
