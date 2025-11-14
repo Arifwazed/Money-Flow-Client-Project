@@ -102,7 +102,7 @@ const AddTransaction = () => {
                 }}>
                 <div className="card w-full max-w-sm md:max-w-lg shadow-2xl bg-white/30 backdrop-blur-md border border-white/20">
                     <div className="card-body">
-                        <h1 className="text-3xl font-bold text-center">Add Transaction</h1>
+                        <h1 className="text-3xl font-bold text-center text-primary-gradient">Add Transaction</h1>
                         <form onSubmit={handleAddTransaction}>
                             <fieldset className="fieldset">
                                 {/* Type */}

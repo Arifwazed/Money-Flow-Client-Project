@@ -27,11 +27,11 @@ const UpdateProfile = () => {
     };
 
     return (
-      <div className="bg-[#F3F8C2]">
+      <div className="bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc]">
         {/* <Navbar></Navbar> */}
         <div className="flex justify-center items-center md:h-[70vh] p-7">
-          <div className="card bg-[#d4db91] w-full max-w-3xl shrink-0 shadow-2xl">
-            <h1 className="text-2xl font-semibold text-center text-green-700 py-5">
+          <div className="card bg-[#a7d7fc] w-full max-w-3xl shrink-0 shadow-2xl">
+            <h1 className="text-2xl font-semibold text-center text-primary-gradient py-5">
               Update Profile
             </h1>
             <div className="card-body grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 ">

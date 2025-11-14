@@ -69,9 +69,9 @@ const Reports = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-[#E0F8F5] to-[#FFE6FD] py-10 px-4">
+    <div className="min-h-screen bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] py-10 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-10 text-gray-800">
+        <h1 className="text-4xl font-bold text-center mb-10 text-primary-gradient">
           Financial Reports & Insights
         </h1>
 

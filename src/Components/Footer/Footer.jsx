@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div>
-            <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
+            <footer className="footer sm:footer-horizontal p-10 bg-[#2D5DA9] text-white">
                 <aside>
                     <a className="font-bold text-xl">Money<span className='text-primary-gradient font-bold'>Flow</span></a>
                     <p className='max-w-100'>
@@ -73,7 +73,7 @@ const Footer = () => {
                 </nav>
                 </div>
             </footer>
-            <footer className="footer sm:footer-horizontal footer-center bg-base-200 text-base-content p-4">
+            <footer className="footer sm:footer-horizontal footer-center p-4 bg-[#2D5DA9] text-white">
                 <aside>
                     <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
                 </aside>

@@ -167,10 +167,10 @@ const MyTransactions = () => {
 
     return (
         <div>
-            <div className='bg-linear-to-br from-[#FFE6FD] to-[#E0F8F5] min-h-screen'>
+            <div className='bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] min-h-screen'>
                 <div className='w-11/12 mx-auto py-10 md:py-15 text-center'>
-                    <h1 className='text-4xl font-bold text-center mb-8'>
-                        My Transactions: <span className='text-primary-gradient'>{MyTransactions.length}</span>
+                    <h1 className='text-4xl font-bold text-center mb-8 text-primary-gradient'>
+                        My Transactions: <span className='text-gray-700'>{MyTransactions.length}</span>
                     </h1>
 
                     <div className='flex justify-end'>
@@ -183,10 +183,10 @@ const MyTransactions = () => {
                         </div>
                     </div>
 
-                    <div className="overflow-x-auto border border-gray-300 rounded-lg">
+                    <div className="overflow-x-auto border border-[#2D5DA9] rounded-lg">
                         <table className="table">
                             <thead>
-                                <tr>
+                                <tr className='font-bold text-black'>
                                     <th>SL No</th>
                                     <th>Type</th>
                                     <th>Category</th>
@@ -206,7 +206,7 @@ const MyTransactions = () => {
                                         <th>
                                             <button
                                                 onClick={() => handleBidModalOpen(transaction._id)}
-                                                className="btn btn-outline btn-accent btn-sm"
+                                                className="btn btn-accent btn-sm"
                                             >
                                                 Update Transaction
                                             </button>
@@ -214,7 +214,7 @@ const MyTransactions = () => {
                                         <th>
                                             <button
                                                 onClick={() => handleRemoveTransaction(transaction._id)}
-                                                className="btn btn-outline btn-secondary btn-sm"
+                                                className="btn  btn-secondary btn-sm"
                                             >
                                                 Remove Transaction
                                             </button>
@@ -222,7 +222,7 @@ const MyTransactions = () => {
                                         <th>
                                             <Link
                                                 to={`/transaction/${transaction._id}`}
-                                                className="btn btn-outline btn-info btn-sm"
+                                                className="btn btn-info btn-sm"
                                             >
                                                 View Details
                                             </Link>
