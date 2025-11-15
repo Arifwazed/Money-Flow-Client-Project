@@ -69,20 +69,20 @@ const Reports = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] py-10 px-4">
+    <div className="min-h-screen bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] dark:bg-none py-10 px-4">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-10 text-primary-gradient">
           Financial Reports & Insights
         </h1>
 
         {/* Month Filter */}
-        <div className="flex justify-center mb-10">
+        <div className="flex justify-center mb-10 ">
           <select
-            className="select select-bordered w-64 text-gray-800"
+            className="select select-bordered w-64 btn btn-login bg-[#1FA2FF] text-white"
             value={selectedMonth}
             onChange={(e) => setSelectedMonth(e.target.value)}
           >
-            <option value="">All Months</option>
+            <option value="">All Months </option>
             {[...Array(12)].map((_, i) => (
               <option key={i} value={i}>
                 {new Date(0, i).toLocaleString("default", { month: "long" })}

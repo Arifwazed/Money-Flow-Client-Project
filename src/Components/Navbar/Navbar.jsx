@@ -1,9 +1,10 @@
-import React, { use } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../Contexts/AuthContext';
 
 const Navbar = () => {
     const {user,logOut} = use(AuthContext);
+    const [theme,setTheme] = useState(localStorage.getItem('theme') || 'light')
     const fallbackImg = "https://img.icons8.com/ios-filled/50/user-male-circle.png";
     const links = <>
         <li><NavLink to="/" className={({isActive})=> isActive ? "text-primary-gradient font-bold" : ""}>Home</NavLink></li>
@@ -15,6 +16,19 @@ const Navbar = () => {
     const handleLogOut = () => {
         logOut()
     }
+
+    useEffect(()=>{
+        const html = document.querySelector('html');
+        html.setAttribute("data-theme",theme)
+        localStorage.setItem('theme',theme)
+
+    },[theme]);
+
+    const handleTheme = (checked) => {
+        // console.log(checked)
+        setTheme(checked ? "dark" : "light")
+    }
+
     return (
         <div className=''>
             <div className="navbar bg-[#2D5DA9] text-white shadow-sm">
@@ -39,6 +53,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    {/* theme */}
+                    <input onChange={(e)=> handleTheme(e.target.checked)} type='checkbox' className='toggle mr-3' defaultChecked={localStorage.getItem('theme') === "dark" } />
                     {
                         user? <>
                         <div className="dropdown dropdown-end">
@@ -47,7 +63,7 @@ const Navbar = () => {
                                 </div>
                             <ul tabIndex="-1" className="dropdown-content menu bg-[#2D5DA9] text-white rounded-box z-1 w-48 md:w-54 p-2 shadow-sm border">
                                 <li className="text-base font-semibold"><a><img width="28" height="28" src="https://img.icons8.com/pulsar-gradient/48/user.png" alt="user"/>{user.displayName}</a></li>
-                                <li><button onClick={handleLogOut} className="btn btn-logout border-none shadow-none btn-logout">LogOut <img width="18" height="18" src="https://img.icons8.com/metro/26/FFFFFF/exit.png" alt="exit"/></button></li>
+                                <li><button onClick={handleLogOut} className="btn btn-logout border-none shadow-none btn-logout text-white">LogOut <img width="18" height="18" src="https://img.icons8.com/metro/26/FFFFFF/exit.png" alt="exit"/></button></li>
                             </ul>
                         </div>
                         </>

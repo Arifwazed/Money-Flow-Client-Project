@@ -38,8 +38,8 @@ const TransactionDetails = () => {
   const formattedDate = new Date(transaction.date).toLocaleDateString();
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] flex items-center justify-center p-4">
-      <div className="bg-white/50 backdrop-blur-md p-8 rounded-3xl shadow-xl w-full max-w-3xl">
+    <div className="min-h-screen bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] dark:bg-none flex items-center justify-center p-4">
+      <div className="bg-white/50 dark:bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-xl w-full max-w-3xl">
         <h1 className="text-4xl font-bold mb-6 text-center text-purple-700">
           Transaction Details
         </h1>
@@ -85,20 +85,22 @@ const TransactionDetails = () => {
 
           {/* Right Column */}
           <div className="space-y-4">
-            <div className="bg-purple-100 p-4 rounded-xl">
-              <h2 className="font-bold text-gray-700 mb-2">Category Summary</h2>
-              <p>
+            <div className="bg-purple-300 p-4 rounded-xl">
+              <h2 className="font-bold text-gray-700 mb-2 flex items-center gap-2"><img width="35" height="35" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-text-file-martial-arts-flaticons-lineal-color-flat-icons.png" alt="external-text-file-martial-arts-flaticons-lineal-color-flat-icons"/>Category Summary</h2>
+              <p className="dark:text-gray-600">
                 <span className="font-semibold">{categorySummary.count}</span>{" "}
                 transaction(s) in this category
               </p>
-              <p>
+              <p className="dark:text-gray-700">
                 Total Amount:{" "}
                 <span className="font-semibold">${categorySummary.total.toFixed(2)}</span>
               </p>
             </div>
 
             <div className="bg-yellow-100 p-4 rounded-xl">
-              <h2 className="font-bold text-gray-700 mb-2">Description / Notes</h2>
+              <h2 className="font-bold text-gray-700 mb-2 flex items-center gap-2">
+                <img width="35" height="35" src="https://img.icons8.com/external-others-iconmarket/64/external-notes-essential-others-iconmarket-4.png" alt="external-notes-essential-others-iconmarket-4"/>
+                Description / Notes</h2>
               <p className="text-gray-800">{transaction.description || "No notes provided."}</p>
             </div>
           </div>

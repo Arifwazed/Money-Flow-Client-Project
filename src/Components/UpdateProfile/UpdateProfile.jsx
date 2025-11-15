@@ -27,7 +27,7 @@ const UpdateProfile = () => {
     };
 
     return (
-      <div className="bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc]">
+      <div className="bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] dark:bg-none">
         {/* <Navbar></Navbar> */}
         <div className="flex justify-center items-center md:h-[70vh] p-7">
           <div className="card bg-[#b6dffe] w-full max-w-3xl shrink-0 shadow-2xl ">
@@ -61,7 +61,7 @@ const UpdateProfile = () => {
                 </p>
 
               <form onSubmit={handleUpdate}>
-                <fieldset className="fieldset space-y-4">
+                <fieldset className="fieldset space-y-4 dark:text-gray-800">
                   <div>
                     <label className="label text-sm font-semibold mb-2">
                       Full Name
@@ -103,6 +103,7 @@ const UpdateProfile = () => {
                     type="submit"
                     className="btn btn-login w-full mt-4 text-white font-semibold text-base shadow-none border-none rounded-xl "
                   >
+                    <img width="25" height="25" src="https://img.icons8.com/glyph-neue/64/FFFFFF/life-cycle-female.png" alt="life-cycle-female"/>
                     Update Profile
                   </button>
                 </fieldset>

@@ -10,7 +10,7 @@ const Home = () => {
     return (
         // <div className='bg-linear-to-br from-[#e9d6ff] to-[#6eb6ff]'>
         // <div className='bg-linear-to-br from-[#80bff0] to-[#f1f9ff]'>
-        <div className='bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc]'>
+        <div className='bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] dark:bg-none'>
             <Banner></Banner>
             <BudgetTips></BudgetTips>
             <PlanningMatters></PlanningMatters>

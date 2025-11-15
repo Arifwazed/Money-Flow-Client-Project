@@ -100,7 +100,7 @@ const AddTransaction = () => {
                 style={{
                     backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)), url(${bg})`,
                 }}>
-                <div className="card w-full max-w-sm md:max-w-lg shadow-2xl bg-white/30 backdrop-blur-md border border-white/20">
+                <div className="card w-full max-w-sm md:max-w-lg shadow-2xl bg-white/30 backdrop-blur-md border border-white/20 dark:text-black">
                     <div className="card-body">
                         <h1 className="text-3xl font-bold text-center text-primary-gradient">Add Transaction</h1>
                         <form onSubmit={handleAddTransaction}>

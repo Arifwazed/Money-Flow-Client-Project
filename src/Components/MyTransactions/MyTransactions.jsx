@@ -167,10 +167,10 @@ const MyTransactions = () => {
 
     return (
         <div>
-            <div className='bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] min-h-screen'>
+            <div className='bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] dark:bg-none min-h-screen'>
                 <div className='w-11/12 mx-auto py-10 md:py-15 text-center'>
-                    <h1 className='text-4xl font-bold text-center mb-8 text-primary-gradient'>
-                        My Transactions: <span className='text-gray-700'>{MyTransactions.length}</span>
+                    <h1 className='text-4xl font-bold text-center mb-8 '>
+                        <span className='text-primary-gradient'>My Transactions:</span> <span className='text-gray-700 dark:text-[#2D5DA9]'>{MyTransactions.length}</span>
                     </h1>
 
                     <div className='flex justify-end '>
@@ -183,10 +183,10 @@ const MyTransactions = () => {
                         </div>
                     </div>
 
-                    <div className="overflow-x-auto border border-[#2D5DA9] rounded-lg">
+                    <div className="overflow-x-auto border border-[#2D5DA9] rounded-lg dark:text-gray-300">
                         <table className="table">
                             <thead>
-                                <tr className='font-bold text-black'>
+                                <tr className='font-bold text-black dark:text-white'>
                                     <th>SL No</th>
                                     <th>Type</th>
                                     <th>Category</th>
@@ -238,7 +238,7 @@ const MyTransactions = () => {
             <dialog ref={bidModalRef} className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
                     <h3 className="font-bold text-lg">Modify Transaction Record</h3>
-                    <p className="py-3 text-gray-600">Ensure all details are accurate before saving your changes.</p>
+                    <p className="py-3 text-gray-600 dark:text-gray-400">Ensure all details are accurate before saving your changes.</p>
                     <form onSubmit={(e) => handleUpdateTransaction(e, selectedData._id)}>
                         <fieldset className="fieldset">
                             <label className="label">Type</label>
