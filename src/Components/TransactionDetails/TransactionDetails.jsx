@@ -38,7 +38,7 @@ const TransactionDetails = () => {
   const formattedDate = new Date(transaction.date).toLocaleDateString();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FFE6FD] to-[#E0F8F5] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] flex items-center justify-center p-4">
       <div className="bg-white/50 backdrop-blur-md p-8 rounded-3xl shadow-xl w-full max-w-3xl">
         <h1 className="text-4xl font-bold mb-6 text-center text-purple-700">
           Transaction Details

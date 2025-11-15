@@ -173,10 +173,10 @@ const MyTransactions = () => {
                         My Transactions: <span className='text-gray-700'>{MyTransactions.length}</span>
                     </h1>
 
-                    <div className='flex justify-end'>
-                        <div className="dropdown dropdown-bottom dropdown-end mb-5">
-                            <div tabIndex={0} role="button" className="btn m-1">{sort} ⬇️</div>
-                            <ul tabIndex="-1" className="dropdown-content menu bg-base-200 rounded-box z-1 w-52 p-2 shadow-sm">
+                    <div className='flex justify-end '>
+                        <div className="dropdown dropdown-bottom dropdown-end mb-5 ">
+                            <div tabIndex={0} role="button" className="btn m-1 font-semibold btn-login border-none shadow-none">{sort} <img width="18" height="18" src="https://img.icons8.com/sf-black-filled/64/FFFFFF/expand-arrow.png" alt="expand-arrow" className='mt-1'/></div>
+                            <ul tabIndex="-1" className="dropdown-content menu font-semibold btn-login rounded-box z-1 w-52 p-2 shadow-sm">
                                 <li onClick={()=>handleSort('date')}><a>Sort By Date</a></li>
                                 <li onClick={()=>handleSort('amount')}><a>Sort By Amount</a></li>
                             </ul>
