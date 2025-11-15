@@ -75,7 +75,7 @@ const Register = () => {
     return (
         <div>
             <div className="hero min-h-screen bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc]">
-                <div className="card bg-[#a7d7fc] w-full max-w-sm shrink-0 shadow-2xl">
+                <div className="card bg-[#a7d7fc] w-full max-w-sm shrink-0 shadow-2xl px-2">
                     <div className="card-body">
                         <h1 className="text-3xl font-bold text-center text-primary-gradient">Register Your Account</h1>
                         <form onSubmit={handleRegister}>
@@ -124,7 +124,7 @@ const Register = () => {
                                     <hr className='w-1/2'/>
                                 </div>
                                 {/* Google */}
-                                <button onClick={handleGoogleSubmit} className="btn btn-g  border-none shadow-none text-white rounded-xl">
+                                <button onClick={handleGoogleSubmit} className="btn bg-gray-800  border-none shadow-none text-white rounded-xl">
                                 <img width="18" height="18" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo"/>
                                 Login with Google
                                 </button>
