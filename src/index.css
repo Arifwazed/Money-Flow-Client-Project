@@ -15,7 +15,27 @@
   --color-primary: blue;
   
 }
+/* Theme toggle */
+.custom-toggle {
+  --tw-bg-opacity: 1;
+  background-color: #ccc; /* off state */
+  border-radius: 9999px; /* rounded */
+  transition: background-color 0.3s;
+}
 
+.custom-toggle:checked {
+  background-color: #4f46e5; /* on state */
+}
+
+.custom-toggle:checked::before {
+  background-color: white; /* knob color when checked */
+}
+
+.custom-toggle::before {
+  background-color: white; /* knob color when unchecked */
+}
+
+/* button css */
 .text-primary-gradient {
   @apply bg-linear-to-br from-[#3363FF] to-[#A92FFF] bg-clip-text text-transparent;
   -webkit-background-clip: text;

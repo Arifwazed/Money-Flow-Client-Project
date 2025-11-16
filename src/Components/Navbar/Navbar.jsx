@@ -7,11 +7,11 @@ const Navbar = () => {
     const [theme,setTheme] = useState(localStorage.getItem('theme') || 'light')
     const fallbackImg = "https://img.icons8.com/ios-filled/50/user-male-circle.png";
     const links = <>
-        <li><NavLink to="/" className={({isActive})=> isActive ? "text-primary-gradient font-bold" : ""}>Home</NavLink></li>
-        <li><NavLink to="/addTransaction" className={({isActive})=> isActive ? "text-primary-gradient font-bold" : ""}>Add Transaction</NavLink></li>
-        <li><NavLink to="/my-transactions" className={({isActive})=> isActive ? "text-primary-gradient font-bold" : ""}>My Transactions</NavLink></li>
-        <li><NavLink to="/reports" className={({isActive})=> isActive ? "text-primary-gradient font-bold" : ""}>Reports</NavLink></li>
-        <li><NavLink to="/updateProfile" className={({isActive})=> isActive ? "text-primary-gradient font-bold" : ""}>My Profile</NavLink></li>
+        <li><NavLink to="/" className={({isActive})=> isActive ? "text-pink-600 font-bold border border-white rounded-2xl py-1" : ""}>Home</NavLink></li>
+        <li><NavLink to="/addTransaction" className={({isActive})=> isActive ? "text-pink-600 font-bold border border-white rounded-2xl py-1" : ""}>Add Transaction</NavLink></li>
+        <li><NavLink to="/my-transactions" className={({isActive})=> isActive ? "text-primary-gradient font-bold border border-white rounded-2xl py-1" : ""}>My Transactions</NavLink></li>
+        <li><NavLink to="/reports" className={({isActive})=> isActive ? "text-primary-gradient font-bold border border-white rounded-2xl py-1" : ""}>Reports</NavLink></li>
+        <li><NavLink to="/updateProfile" className={({isActive})=> isActive ? "text-primary-gradient font-bold border border-white rounded-2xl py-1" : ""}>My Profile</NavLink></li>
     </>
     const handleLogOut = () => {
         logOut()
@@ -54,7 +54,31 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {/* theme */}
-                    <input onChange={(e)=> handleTheme(e.target.checked)} type='checkbox' className='toggle mr-3' defaultChecked={localStorage.getItem('theme') === "dark" } />
+                    {/* simple */}
+                    {/* <input onChange={(e)=> handleTheme(e.target.checked)} type='checkbox' className='toggle custom-toggle mr-3' defaultChecked={localStorage.getItem('theme') === "dark" } />  */}
+
+                    <label className="relative inline-block w-10 sm:w-11 h-6 sm:h-6 cursor-pointer mr-2">
+                        <input
+                            type="checkbox"
+                            className="sr-only"
+                            checked={theme === "dark"}
+                            onChange={(e) => handleTheme(e.target.checked)}
+                        />
+                        {/* Toggle Track */}
+                        <span className="block bg-gray-300 dark:bg-gray-600 rounded-full w-full h-full transition-colors"></span>
+                        
+                        {/* Toggle Knob */}
+                        <span
+                            className={`absolute top-0.5 left-0.5 w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full shadow-md bg-no-repeat bg-center bg-contain transform transition-transform ${
+                            theme === "dark"
+                                ? "translate-x-5 sm:translate-x-5 bg-[url('https://img.icons8.com/pulsar-gradient/48/do-not-disturb-2.png')]"
+                                : "translate-x-0 bg-[url('https://img.icons8.com/external-flat-papa-vector/78/external-Light-Mode-interface-flat-papa-vector.png')]"
+                            }`}
+                        ></span>
+                    </label>
+                    
+                    
+                    
                     {
                         user? <>
                         <div className="dropdown dropdown-end">
