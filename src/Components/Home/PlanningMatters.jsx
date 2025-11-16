@@ -2,7 +2,7 @@ import React from 'react';
 
 const PlanningMatters = () => {
     return (
-        <div className='w-11/12 mx-auto py-5'>
+        <div className='w-11/12 mx-auto  py-5 md:p-10'>
                 <h2 className="text-4xl font-semibold mb-4 text-center ">
                     <span className='text-primary-gradient'>Why Financial Planning Matters</span>                    
                 </h2>

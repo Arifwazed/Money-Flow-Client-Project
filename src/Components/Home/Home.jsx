@@ -3,6 +3,7 @@ import Banner from './Banner';
 import PlanningMatters from './PlanningMatters';
 import BudgetTips from './BudgetTips';
 import { AuthContext } from '../../Contexts/AuthContext';
+import Overview from './Overview';
 
 const Home = () => {
     const {user} = use(AuthContext);
@@ -13,6 +14,7 @@ const Home = () => {
         <div className='bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] dark:bg-none'>
             <Banner></Banner>
             <BudgetTips></BudgetTips>
+            <Overview></Overview>
             <PlanningMatters></PlanningMatters>
         </div>
     );

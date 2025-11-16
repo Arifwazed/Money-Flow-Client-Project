@@ -188,11 +188,31 @@ const MyTransactions = () => {
                             <thead>
                                 <tr className='font-bold text-black dark:text-white'>
                                     <th>SL No</th>
-                                    <th>Type</th>
-                                    <th>Category</th>
-                                    <th>Amount</th>
-                                    <th>Date</th>
-                                    <th className='text-center' colSpan={3}>Action</th>
+                                    <th>
+                                        <div className='flex gap-2'>
+                                            <img width="23" height="23" src="https://img.icons8.com/fluency/48/document-in-folder--v1.png" alt="document-in-folder--v1"/>Type
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div className='flex gap-2'>
+                                            <img width="23" height="23" src="https://img.icons8.com/nolan/64/sorting-answers.png" alt="sorting-answers"/>Category
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div className='flex gap-2'>
+                                            <img width="23" height="23" src="https://img.icons8.com/doodle/48/money.png" alt="money"/>Amount
+                                        </div>
+                                    </th>       
+                                    <th >
+                                        <div className='flex gap-2'>
+                                            <img width="23" height="23" src="https://img.icons8.com/color/48/pay-date.png" alt="pay-date"/>Date
+                                        </div>
+                                    </th>
+                                    <th className='text-center' colSpan={3}>
+                                        <div className='flex gap-2 justify-center'>
+                                            <img width="23" height="23" src="https://img.icons8.com/nolan/64/apple-settings.png" alt="apple-settings"/>Action
+                                        </div>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>

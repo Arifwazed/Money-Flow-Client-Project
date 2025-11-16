@@ -39,7 +39,7 @@ const TransactionDetails = () => {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] dark:bg-none flex items-center justify-center p-4">
-      <div className="bg-white/50 dark:bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-xl w-full max-w-3xl">
+      <div className="bg-white/60 dark:bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] backdrop-blur-md p-8 rounded-3xl shadow-xl w-full max-w-3xl">
         <h1 className="text-4xl font-bold mb-6 text-center text-purple-700">
           Transaction Details
         </h1>

@@ -72,7 +72,8 @@ const Reports = () => {
     <div className="min-h-screen bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] dark:bg-none py-10 px-4">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-10 text-primary-gradient">
-          Financial Reports & Insights
+          <span className='text-primary-gradient'>Financial Reports & Insights</span>
+          
         </h1>
 
         {/* Month Filter */}
@@ -93,16 +94,26 @@ const Reports = () => {
 
         {/* Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div className="bg-white/50 backdrop-blur-md border border-white/30 p-6 rounded-2xl text-center shadow-md">
-            <h2 className="text-xl font-semibold text-gray-600 mb-2">Total Income</h2>
+          <div className="bg-white/70 dark:bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] backdrop-blur-md border border-white/30 p-6 rounded-2xl text-center shadow-md">
+            <div className="flex items-center gap-3 justify-center">
+              <h2 className="text-xl font-semibold text-gray-600 dark:text-gray-900 mb-2">Total Income </h2>
+              <img width="22" height="25" src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/40C057/external-arrow-up-increase-and-decrease-tanah-basah-glyph-tanah-basah.png" alt="external-arrow-up-increase-and-decrease-tanah-basah-glyph-tanah-basah"/>
+            </div>
             <p className="text-3xl font-bold text-green-500">${totalIncome.toFixed(2)}</p>
           </div>
-          <div className="bg-white/50 backdrop-blur-md border border-white/30 p-6 rounded-2xl text-center shadow-md">
-            <h2 className="text-xl font-semibold text-gray-600 mb-2">Total Expense</h2>
+          <div className="bg-white/70 dark:bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] backdrop-blur-md border border-white/30 p-6 rounded-2xl text-center shadow-md">
+            <div className="flex items-center gap-3 justify-center">
+              <h2 className="text-xl font-semibold text-gray-600 dark:text-gray-900 mb-2">Total Expense</h2>
+              <img width="25" height="25" src="https://img.icons8.com/ios-glyphs/30/FA5252/thick-arrow-pointing-down.png" alt="thick-arrow-pointing-down"/>
+
+            </div>
             <p className="text-3xl font-bold text-red-500">${totalExpense.toFixed(2)}</p>
           </div>
-          <div className="bg-white/50 backdrop-blur-md border border-white/30 p-6 rounded-2xl text-center shadow-md">
-            <h2 className="text-xl font-semibold text-gray-600 mb-2">Net Balance</h2>
+          <div className="bg-white/70 dark:bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] backdrop-blur-md border border-white/30 p-6 rounded-2xl text-center shadow-md">
+            <div className="flex items-center gap-3 justify-center">
+              <h2 className="text-xl font-semibold text-gray-600 dark:text-gray-900 mb-2">Net Balance</h2>
+              <img width="28" height="28" src="https://img.icons8.com/external-others-iconmarket/64/external-arrow-arrows-line-others-iconmarket-39.png" alt="external-arrow-arrows-line-others-iconmarket-39"/>
+            </div>
             <p className={`text-3xl font-bold ${netBalance >= 0 ? "text-green-600" : "text-red-600"}`}>
               ${netBalance.toFixed(2)}
             </p>
@@ -110,8 +121,8 @@ const Reports = () => {
         </div>
 
         {/* Pie Chart (Responsive Layout) */}
-        <div className="bg-white/60 backdrop-blur-md p-6 rounded-2xl shadow-md mb-8">
-          <h2 className="text-2xl font-semibold text-center mb-4 text-gray-700">
+        <div className="bg-white/70 dark:bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] backdrop-blur-md p-6 rounded-2xl shadow-md mb-8">
+          <h2 className="text-2xl font-semibold text-center mb-4 text-gray-700 dark:text-gray-900">
             Category Breakdown
           </h2>
           {pieData.length > 0 ? (
@@ -159,8 +170,8 @@ const Reports = () => {
         </div>
 
         {/* Bar Chart */}
-        <div className="bg-white/60 backdrop-blur-md p-6 rounded-2xl shadow-md">
-          <h2 className="text-2xl font-semibold text-center mb-4 text-gray-700">
+        <div className="bg-white/70 dark:bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] backdrop-blur-md p-6 rounded-2xl shadow-md">
+          <h2 className="text-2xl font-semibold text-center mb-4 text-gray-700 dark:text-gray-900">
             Monthly Income vs Expense
           </h2>
           {barData.length > 0 ? (
