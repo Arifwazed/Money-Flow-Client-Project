@@ -220,7 +220,7 @@ const MyTransactions = () => {
                                 {MyTransactions.map((transaction, index) =>
                                     <tr key={index}>
                                         <th>{index + 1}</th>
-                                        <td>{transaction.type}</td>
+                                        <td className={transaction.type === 'Expense' ? "text-red-500" : "text-green-500"}>{transaction.type}</td>
                                         <td>{transaction.category}</td>
                                         <td>$ {transaction.amount}</td>
                                         <td>{transaction.date}</td>
