@@ -1,15 +1,15 @@
-MoneyFlow — Personal Finance Management Web App
+# **MoneyFlow — Personal Finance Management Web App**
 
 🔗 Live Site: https://money-flow-bc928.web.app/
 
 MoneyFlow is a modern personal finance management application that helps users track income, expenses, and financial insights through an intuitive dashboard and a secure authentication system.
 
-⭐Key Features
+## **⭐Key Features**
 
-Secure Authentication
+**Secure Authentication**
 Email/password login, Google login, protected routes, logout functionality, and form validation.
 
-Add & Manage Transactions
+**Add & Manage Transactions**
 Users can create income or expense entries with type, category, amount, date, and description.
 
 Financial Overview Dashboard
