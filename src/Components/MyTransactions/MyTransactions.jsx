@@ -106,7 +106,8 @@ const MyTransactions = () => {
                     });
                     bidModalRef.current.close();
                     setTimeout(() => {
-                        navigate('/');
+                        // navigate('/');
+                        navigate(`/transaction/${id}`);
                     }, 1500);
                 }
             });
@@ -170,7 +171,7 @@ const MyTransactions = () => {
             <div className='bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] dark:bg-none min-h-screen'>
                 <div className='w-11/12 mx-auto py-10 md:py-15 text-center'>
                     <h1 className='text-4xl font-bold text-center mb-8 '>
-                        <span className='text-primary-gradient'>My Transactions:</span> <span className='text-gray-700 dark:text-[#2D5DA9]'>{MyTransactions.length}</span>
+                        <span className='text-primary-gradient'>My Transactions:</span> <span className='text-gray-700 dark:text-white'>{MyTransactions.length}</span>
                     </h1>
 
                     <div className='flex justify-end '>
@@ -255,7 +256,7 @@ const MyTransactions = () => {
                 </div>
             </div>
 
-            <dialog ref={bidModalRef} className="modal modal-bottom sm:modal-middle">
+            <dialog ref={bidModalRef} className="modal modal-bottom sm:modal-middle px-2">
                 <div className="modal-box">
                     <h3 className="font-bold text-lg">Modify Transaction Record</h3>
                     <p className="py-3 text-gray-600 dark:text-gray-400">Ensure all details are accurate before saving your changes.</p>

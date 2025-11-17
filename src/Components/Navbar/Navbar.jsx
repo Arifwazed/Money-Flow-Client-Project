@@ -8,7 +8,7 @@ const Navbar = () => {
     const fallbackImg = "https://img.icons8.com/ios-filled/50/user-male-circle.png";
     const links = <>
         <li><NavLink to="/" className={({isActive})=> isActive ? "font-bold border border-white rounded-2xl py-1" : ""}><img width="20" height="20" src="https://img.icons8.com/color/48/home--v1.png" alt="home--v1"/>Home</NavLink></li>
-        <li><NavLink to="/addTransaction" className={({isActive})=> isActive ? " font-bold border border-white rounded-2xl py-1" : ""}><img width="22" height="22" src="https://img.icons8.com/plasticine/100/online-money-transfer.png" alt="online-money-transfer"/>Add Transaction</NavLink></li>
+        <li><NavLink to="/add-transaction" className={({isActive})=> isActive ? " font-bold border border-white rounded-2xl py-1" : ""}><img width="22" height="22" src="https://img.icons8.com/plasticine/100/online-money-transfer.png" alt="online-money-transfer"/>Add Transaction</NavLink></li>
         <li><NavLink to="/my-transactions" className={({isActive})=> isActive ? " font-bold border border-white rounded-2xl py-1" : ""}><img width="25" height="25" src="https://img.icons8.com/fluency/48/notes-and-coins.png" alt="notes-and-coins"/>My Transactions</NavLink></li>
         <li><NavLink to="/reports" className={({isActive})=> isActive ? " font-bold border border-white rounded-2xl py-1" : ""}><img width="22" height="22" src="https://img.icons8.com/pulsar-gradient/48/statistics-report.png" alt="statistics-report"/>Reports</NavLink></li>
         <li><NavLink to="/updateProfile" className={({isActive})=> isActive ? " font-bold border border-white rounded-2xl py-1" : ""}><img width="25" height="25" src="https://img.icons8.com/color/48/user-female-circle--v1.png" alt="user-female-circle--v1"/>My Profile</NavLink></li>
@@ -43,10 +43,10 @@ const Navbar = () => {
                         {links}
                     </ul>
                     </div>
-                    <a className="flex items-center text-xl font-bold">
+                    <a className="flex items-center text-xl font-bold text-green-500">
                         {/* <img width="40" height="40" src="https://img.icons8.com/fluency/48/notes-and-coins.png" alt="notes-and-coins"/> */}
                         <img width="35" height="35" src="https://img.icons8.com/3d-fluency/94/dollar-bitcoin-exchange.png" alt="dollar-bitcoin-exchange"/>
-                        Money <span className='text-primary-gradient'>Flow</span> </a>
+                        Money <span className=' text-amber-300'>Flow</span> </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

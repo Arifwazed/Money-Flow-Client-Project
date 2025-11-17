@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         Component: Register,
       },
       {
-        path: 'addTransaction',
+        path: 'add-transaction',
         element: <PrivateRoute>
             <AddTransaction></AddTransaction>
         </PrivateRoute>

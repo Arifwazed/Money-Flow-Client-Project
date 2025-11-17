@@ -22,16 +22,16 @@ const Register = () => {
         const password = form.password.value;
         console.log(name,photo,email,password);
         if(!uppercase.test(password)){
-            setError('Must contain an uppercase letter')
-            toast.error(error)
+            // setError('Must contain an uppercase letter')
+            toast.error('Must contain an uppercase letter')
         }
         else if(!lowercase.test(password)){
-            setError('Must contain a lowercase letter')
-            toast.error(error)
+            // setError('Must contain a lowercase letter')
+            toast.error('Must contain a lowercase letter')
         }
         else if(!minLength.test(password)){
-            setError('Must be at least 6 characters long')
-            toast.error(error)
+            // setError('Must be at least 6 characters long')
+            toast.error('Must be at least 6 characters long')
         }
         else{
             createUser(email,password)
@@ -46,7 +46,11 @@ const Register = () => {
             .catch(error => {
                 const code= error.code;
                 // console.log(code)
-                toast.error(code)
+                if(code === 'auth/email-already-in-use'){
+                    toast.error('Email already in use')
+                }else{
+                    toast.error(code)
+                }
             }) 
         }
 
@@ -128,7 +132,7 @@ const Register = () => {
                                 <img width="18" height="18" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo"/>
                                 Login with Google
                                 </button>
-                                <p className="text-center my-3 text-xs font-semibold">
+                                <p className="text-center my-3 text-xs font-semibold dark:text-black">
                                     Already have an Account ?{" "}
                                     <Link to="/login" className="text-secondary">
                                     Login

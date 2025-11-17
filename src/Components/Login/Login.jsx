@@ -76,7 +76,7 @@ const Login = () => {
                                 <img width="18" height="18" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo"/>
                                 Login with Google
                                 </button>
-                                <p className="text-center my-3 text-xs font-semibold">
+                                <p className="text-center my-3 text-xs font-semibold dark:text-black">
                                     Dont’t Have An Account ?{" "}
                                     <Link to="/register" className="text-secondary">
                                     Register

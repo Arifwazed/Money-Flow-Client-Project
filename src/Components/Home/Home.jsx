@@ -13,8 +13,8 @@ const Home = () => {
         // <div className='bg-linear-to-br from-[#80bff0] to-[#f1f9ff]'>
         <div className='bg-linear-to-br from-[#f1f9ff] to-[#a7d7fc] dark:bg-none'>
             <Banner></Banner>
-            <BudgetTips></BudgetTips>
             <Overview></Overview>
+            <BudgetTips></BudgetTips>
             <PlanningMatters></PlanningMatters>
         </div>
     );
