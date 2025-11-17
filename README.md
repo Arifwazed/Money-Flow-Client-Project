@@ -12,10 +12,10 @@ Email/password login, Google login, protected routes, logout functionality, and 
 ### **Add & Manage Transactions:**
 Users can create income or expense entries with type, category, amount, date, and description.
 
-Financial Overview Dashboard:
+- **Financial Overview Dashboard:**
 Displays real-time total income, total expenses, and net balance based on database data.
 
-My Transactions Page:
+- **My Transactions Page:**
 View, update, delete, and sort transactions by date or amount with real-time updates.
 
 Reports & Insights:
