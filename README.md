@@ -1,16 +1,23 @@
-# React + Vite
+💰 MoneyFlow — Personal Finance Management Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 Live Site: https://money-flow-bc928.web.app/
 
-Currently, two official plugins are available:
+MoneyFlow is a modern personal finance tracker that helps users manage income, expenses, and financial reports with an easy-to-use dashboard and secure authentication system.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+⭐ Key Features
 
-## React Compiler
+🔐 Secure Authentication — Email/Password login, Google login, protected/private routes, logout, and validation.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+📝 Add & Manage Transactions — Users can add income/expense entries with type, category, amount, date, and description.
 
-## Expanding the ESLint configuration
+📊 Financial Overview Dashboard — Displays total income, total expenses, and net balance from database data.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+📂 My Transactions Page — Users can view, update, delete, and sort transactions by date or amount (real-time updates).
+
+📈 Reports & Insights — Category-wise pie charts, monthly bar charts, and dynamic filters for better financial analysis.
+
+🌗 Light/Dark Mode — Fully responsive theme toggle with persistent storage.
+
+🧾 Transaction Details Page — Shows full info including transaction type, date, category, amount, and category totals.
+
+⚠️ 404 Page + Loading Spinner — Dynamic loader during data fetch and a custom not-found page for invalid routes.
