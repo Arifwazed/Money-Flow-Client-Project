@@ -6,10 +6,10 @@ MoneyFlow is a modern personal finance management application that helps users t
 
 ## **⭐Key Features**
 
-- **Secure Authentication:**
+- **Secure Authentication - **
 Email/password login, Google login, protected routes, logout functionality, and form validation.
 
-- **Add & Manage Transactions:** -
+- **Add & Manage Transactions** 
 Users can create income or expense entries with type, category, amount, date, and description.
 
 - **Financial Overview Dashboard** -
