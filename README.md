@@ -1,6 +1,6 @@
 # 💰 Money Flow — Expense Tracker (Client)
 
-> A modern, full‑stack personal finance management application that helps users track income, manage expenses, and gain insights through interactive dashboards and charts.
+ A modern, full‑stack personal finance management application that helps users track income, manage expenses, and gain insights through interactive dashboards and charts.
 
 ---
 
@@ -138,6 +138,3 @@ Frontend & Full‑Stack Developer
 
 * GitHub: [https://github.com/Arifwazed](https://github.com/Arifwazed)
 
----
-
-⭐ If you like this project, please consider giving it a star!
