@@ -127,14 +127,13 @@ The client will run at **[http://localhost:5173](http://localhost:5173)**
 * 🌍 **Live Client App:** [https://money-flow-bc928.web.app/](https://money-flow-bc928.web.app/)
 * 👨‍💻 **Client Repo:** [https://github.com/Arifwazed/Money-Flow-Client-Project](https://github.com/Arifwazed/Money-Flow-Client-Project)
 * 🛠️ **Server Repo:** [https://github.com/Arifwazed/Money-Flow-Server-Project](https://github.com/Arifwazed/Money-Flow-Server-Project)
-* 🔥 **Firebase Docs:** [https://firebase.google.com/docs](https://firebase.google.com/docs)
 
 ---
 
 ## 👤 Author
 
 **Arif Hamim**
-Frontend & Full‑Stack Developer
+Frontend & Mern‑Stack Developer
 
 * GitHub: [https://github.com/Arifwazed](https://github.com/Arifwazed)
 
