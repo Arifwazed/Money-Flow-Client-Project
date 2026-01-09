@@ -26,16 +26,6 @@ Authentication is handled on the client using **Firebase Authentication**, while
 
 ---
 
-## 🖼️ Preview
-
-*Add a screenshot of the dashboard or analytics page:*
-
-```md
-![Money Flow Dashboard](./public/screenshot.png)
-```
-
----
-
 ## 🧰 Tech Stack (Client)
 
 * React (Vite)
